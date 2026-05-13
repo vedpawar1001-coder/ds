@@ -1,0 +1,33 @@
+Server:
+
+idlj -fall ReverseModule.idl
+javac *.java ReverseModule/*.java
+orbd -ORBInitialPort 1050&
+java ReverseServer -ORBInitialPort 1050& -ORBInitialHost localhost&
+
+Client:
+
+java ReverseClient -ORBInitialPort 1050 -ORBInitialHost localhost&
+
+// enter string
+//result will be Reverse String
+
+
+//Step 1 — Install JDK 8
+
+Install:
+Oracle JDK 8 Download
+
+or
+
+Temurin JDK 8 Download
+
+Step 2 — Set JAVA_HOME
+
+Set environment variable to JDK 8 path
+
+idlj -fall ReverseModule.idl
+javac *.java ReverseModule/*.java
+start orbd -ORBInitialPort 1050
+java ReverseServer -ORBInitialPort 1050 -ORBInitialHost localhost
+java ReverseClient -ORBInitialPort 1050 -ORBInitialHost localhost
